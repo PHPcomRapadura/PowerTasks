@@ -17,7 +17,7 @@ class User extends CI_Controller{
     // $tasksTeamToDo = $this->TeamTaskModel->searchAllByUserAndStatus($user->id_user, 0);
     $myTeams = array_merge($this->TeamModel->searchTeamsThatIManagement($user->id_user), $this->TeamMemberModel->searchAllTeamsOfMember($user->id_user));
 
-    $page = [
+    $page = array(
       'page_title' => 'Dashboard',
       'page_content' => 'user/dashboard',
       'user'=>$user,
@@ -26,7 +26,7 @@ class User extends CI_Controller{
       'myTags' => $myTags,
       // 'tasksTeamToDo' => count($tasksTeamToDo),
       'myTeams' => $myTeams,
-    ];
+    );
 
     $this->load->view('public/base', $page);
   }
@@ -84,11 +84,11 @@ class User extends CI_Controller{
   public function profile(){
     $user = authorize(1);
 
-    $page = [
+    $page = array(
       'user' => $user,
       'page_content' => 'user/profile',
       'page_title' => 'Minha Conta',
-    ];
+    );
 
     $this->load->view('public/base', $page);
   }
