@@ -14,7 +14,7 @@ Para criar diferentes projetos de tarefas você pode criar um time sem outros me
 **************************
 Instalação
 **************************
--  `Ter no minimo o PHP 5.6;`
+-  `Ter no minimo o PHP 5.3;`
 
 -  `Após obter a aplicação abra o arquivo {application/config/config.php} e altere a linha 26 de acordo com o endereço web da aplicação onde você instalar;`
 
