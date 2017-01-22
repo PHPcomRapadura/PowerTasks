@@ -47,13 +47,13 @@ class TeamTask extends CI_Controller{
 
     $teamTask = $this->thisTaskBelongsToTheTeam($task_id, $team_id);
 
-    $page = [
+    $page = array(
       'page_title' => 'Editar Etiqueta',
       'page_content' => 'teamtask/edit',
       'user' => $user,
       'task' => $teamTask,
       'team_id' => $team_id,
-    ];
+    );
 
     $this->load->view('public/base', $page);
   }

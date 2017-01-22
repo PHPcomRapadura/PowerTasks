@@ -49,13 +49,13 @@ class TeamTag extends CI_Controller{
 
     $teamTag = $this->thisTagBelongsToTheTeam($tag_id, $team_id);
 
-    $page = [
+    $page = array(
       'page_title' => 'Editar Etiqueta',
       'page_content' => 'teamtag/edit',
       'user' => $user,
       'tag' => $teamTag,
       'team_id' => $team_id,
-    ];
+    );
 
     $this->load->view('public/base', $page);
   }

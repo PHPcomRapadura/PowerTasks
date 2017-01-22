@@ -20,7 +20,7 @@ class TeamMember extends Team{
     $tasksToDo = $this->TeamTaskModel->searchAllByTeamAndStatus($team_id, 0);
     $tasksDone = $this->TeamTaskModel->searchAllByTeamAndStatus($team_id, 1);
 
-    $page = [
+    $page = array(
       'page_title' => $team->name,
       'page_content' => 'team/view',
       'user' => $user,
@@ -31,7 +31,7 @@ class TeamMember extends Team{
       'tasksDone' => $tasksDone,
       'availableMembers' => $availableMembers,
       'members' => $members,
-    ];
+    );
 
     $this->load->view('public/base', $page);
   }
@@ -46,7 +46,7 @@ class TeamMember extends Team{
 
     $team = parent::iManageThisTeam($team_id, $user->id_user);
 
-    $teamMember = ['member_id'=>$member_id, 'team_id'=>$team_id, 'created_in'=>datetime_current()];
+    $teamMember = array('member_id'=>$member_id, 'team_id'=>$team_id, 'created_in'=>datetime_current());
     $this->TeamMemberModel->insertMemberInTeam($teamMember);
 
     $this->session->set_flashdata('success', 'Novo Usuário inserido no grupo');

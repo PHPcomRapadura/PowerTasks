@@ -40,12 +40,12 @@ class Tag extends CI_Controller{
 
     $tag = $this->thisIsMyTag($id, $user->id_user);
 
-    $page = [
+    $page = array(
       'page_title' => 'Editar Etiqueta',
       'page_content' => 'tag/edit',
       'user' => $user,
       'tag' => $tag,
-    ];
+    );
 
     $this->load->view('public/base', $page);
   }

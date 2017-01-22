@@ -7,13 +7,13 @@ class Team extends CI_Controller{
 
     $this->load->model(array('TeamModel', 'TeamMemberModel'));
 
-    $page = [
+    $page = array(
       'page_title' => "Meus Times",
       'page_content' => 'team/list',
       'user' => $user,
       'teams' => $this->TeamModel->searchTeamsThatIManagement($user->id_user),
       'other_teams' => $this->TeamMemberModel->searchTeamsIParticipateIn($user->id_user),
-    ];
+    );
 
     $this->load->view('public/base', $page);
   }
@@ -23,12 +23,12 @@ class Team extends CI_Controller{
 
     $this->load->model('TeamMemberModel');
 
-    $page = [
+    $page = array(
       'page_title' => 'Times que Participo',
       'page_content' => 'team/list_other',
       'user' => $user,
       'teams' => $this->TeamMemberModel->searchTeamsIParticipateIn($user->id_user),
-    ];
+    );
 
     $this->load->view('public/base', $page);
   }
@@ -36,11 +36,11 @@ class Team extends CI_Controller{
   public function add(){
     $user = authorize(1);
 
-    $page = [
+    $page = array(
       'page_title' => 'Novo Time',
       'page_content' => 'team/add',
       'user' => $user,
-    ];
+    );
 
     $this->load->view('public/base', $page);
   }
@@ -84,12 +84,12 @@ class Team extends CI_Controller{
 
     $team = $this->iManageThisTeam($id, $user->id_user);
 
-    $page = [
+    $page = array(
       'page_title' => 'Editar Time',
       'page_content' => 'team/edit',
       'user' => $user,
       'team' => $team,
-    ];
+    );
 
     $this->load->view('public/base', $page);
   }
